@@ -52,7 +52,7 @@ public:
 
     static bool                 isET;
     static const char*          srcDir;              //解析请求时，当前目录的路径
-    static std::atmoic<int>     userCount;           //HTTP连接的个数，即用户的个数。（在HTTP连接初始化和关闭时修改该数据，在上层初始化它）
+    static std::atomic<int>     userCount;           //HTTP连接的个数，即用户的个数。（在HTTP连接初始化和关闭时修改该数据，在上层初始化它）
 
 private:
     int                         fd_;                //HTTP连接对应的描述符
