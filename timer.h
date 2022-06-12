@@ -23,7 +23,7 @@
 
 typedef std::function<void()>               TimeoutCallBack;
 typedef std::chrono::high_resolution_clock  Clock;
-typedef std::chrono::milliseconds           Ms;
+typedef std::chrono::milliseconds           MS;
 typedef Clock::time_point                   TimeStamp;
 // typedef std::unique_ptr<HTTPConnection>     HTTPConnection_Ptr;
 
@@ -61,7 +61,7 @@ public:
 private:
     void del_(size_t i);
     void shiftup_(size_t i);
-    void shiftdown_(size_t index, size_t n);
+    bool shiftdown_(size_t index, size_t n);
     void swapNode_(size_t i, size_t j);
 
     std::vector<TimerNode> heap_;
