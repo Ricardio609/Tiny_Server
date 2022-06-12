@@ -23,6 +23,17 @@ public:
         FINISH,
     };
 
+    enum HTTP_CODE {
+        NO_REQUEST = 0,
+        GET_REQUEST,
+        BAD_REQUEST,
+        NO_RESOURSE,
+        FORBIDDENT_REQUEST,
+        FILE_REQUEST,
+        INTERNAL_ERROR,
+        CLOSED_CONNECTION,
+    };
+
     HTTPrequest() {init();};
     ~HTTPrequest() = default;
 
@@ -33,7 +44,7 @@ public:
 
     /* 获取HTTP信息 */
     std::string path() const;
-    std::string path();
+    std::string& path();
     std::string method() const;
     std::string version() const;
     std::string getPost(const std::string& key) const;

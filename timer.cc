@@ -100,7 +100,7 @@ void TimerManager::handle_expired_event() {
     if(heap_.empty())   return;
     while(!heap_.empty()) {
         TimerNode node = heap_.front();
-        if(std::chrono::duration_cast<MS>(node.expire - Clock::now()).count > 0) {
+        if(std::chrono::duration_cast<MS>(node.expire - Clock::now()).count() > 0) {
             break;
         }
         node.cb();
