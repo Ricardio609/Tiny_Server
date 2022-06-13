@@ -13,6 +13,7 @@
 #include <vector>
 #include <queue>
 #include <future>
+#include <functional>  //std::bind()
 
 class ThreadPool {
 private:

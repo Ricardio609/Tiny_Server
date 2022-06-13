@@ -245,14 +245,14 @@ bool WebServer::initSocket_() {
     ret = listen(listenFd_, 6);
     if(ret < 0) {
         close(listenFd_);
-        return;
+        return false;
     }
     
     /* add listen */
     ret = epoller_->addFd(listenFd_, listenEvent_ | EPOLLIN);
     if(ret == 0) {
         close(listenFd_);
-        return;
+        return false;
     }
     setFdNonblock(listenFd_);
     return true;

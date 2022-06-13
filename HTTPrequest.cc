@@ -73,7 +73,21 @@ void HTTPrequest::parsePath_() {
 }
 
 bool HTTPrequest::parseRequestLine_(const std::string& line) {
-    std::regex pattern("^[^ ]*) ([^ ]*) HTTP/([^ ]*)$");
+    std::regex pattern("^([^ ]*) ([^ ]*) HTTP/([^ ]*)$");
+    std::smatch subMatch;
+
+    if(regex_match(line, subMatch, pattern)) {
+        method_       = subMatch[1];
+        path_         = subMatch[2];
+        version_      = subMatch[3];
+        state_        = HEADERS;
+        return true;
+    }
+    return false;
+}
+
+void HTTPrequest::parseRequestHeader_(const std::string& line) {
+    std::regex pattern("^([^:]*): ?(.*)$");
     std::smatch subMatch;
 
     if(regex_match(line, subMatch, pattern)) {
