@@ -90,7 +90,7 @@ void Buffer::append(const void* data, size_t len) {
 }
 
 void Buffer::append(const Buffer& buffer) {
-    apppend(buffer.curReadPtr(), buffer.readableBytes());
+    append(buffer.curReadPtr(), buffer.readableBytes());
 }
 
 ssize_t Buffer::readFd(int fd, int* Errno) {

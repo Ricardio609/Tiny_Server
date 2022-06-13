@@ -8,7 +8,9 @@
 
 #include <vector>
 #include <atomic>
-#include <string>
+#include <cstring>      //bzero()
+
+#include <iostream>
 
 #include <unistd.h>     //read()    /   write()
 #include <sys/uio.h>    //readv()   /   writev()
