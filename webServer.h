@@ -58,7 +58,7 @@ private:
     static const int MAX_FD = 65536;
     static int setFdNonblock(int fd);
 
-    int     prot_;
+    int     port_;
     int     timeoutMs_;         //毫秒，定时器的默认过期时间
     bool    isClose_;
     int     listenFd_;
