@@ -59,10 +59,10 @@ private:
     static int setFdNonblock(int fd);
 
     int     port_;
+    bool    openLinger_;
     int     timeoutMs_;         //毫秒，定时器的默认过期时间
     bool    isClose_;
     int     listenFd_;
-    bool    openLinger_;
     char*   srcDir_;            //需要获取的路径
 
     uint32_t listenEvent_;
