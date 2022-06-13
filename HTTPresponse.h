@@ -42,7 +42,7 @@ private:
     std::string     path_;
     std::string     srcDir_;
 
-    char*           mmmFile_;
+    char*           mmFile_;
     struct stat     mmFileStat_;
 
     static const std::unordered_map<std::string, std::string>       SUFFIX_TYPE;
