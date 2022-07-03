@@ -27,7 +27,7 @@ void TimerManager::swapNode_(size_t i, size_t j) {
 
 bool TimerManager::shiftdown_(size_t index, size_t n) {
     assert(index >= 0 && index < heap_.size());
-    assert(n >= 0 && n < heap_.size());
+    assert(n >= 0 && n <= heap_.size());
     size_t i = index;
     size_t j =  i * 2 + 1;
     while(j < n) { 
