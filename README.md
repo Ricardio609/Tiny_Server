@@ -16,8 +16,8 @@ C++11 Tiny_Server
 `./bin/myserver`
 
 ## 压力测试
-* 测试环境
-`Ubuntu:20 cpu:i7-4790 内存:16G`
+测试环境: `github codespace`
+
 ```
 
 ```
